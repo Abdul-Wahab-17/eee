@@ -104,17 +104,18 @@ class SoilDataDownloader:
         Returns:
             DataFrame with State and County FIPS codes
         """
-        yield_file = self.output_dir / "us_corn_yield_county_all_years.csv"
+        # Use county centroids file instead
+        centroids_file = self.output_dir / "county_centroids.csv"
         
-        if not yield_file.exists():
+        if not centroids_file.exists():
             raise FileNotFoundError(
-                "Yield data not found. Please run get_yield_by_county.py first."
+                "County centroids not found. Please run get_county_centroids.py first."
             )
         
-        df = pd.read_csv(yield_file)
+        df = pd.read_csv(centroids_file)
         
-        counties = df[['State ANSI', 'County ANSI']].drop_duplicates()
-        counties.columns = ['State_FIPS', 'County_FIPS']
+        # County centroids already has State_FIPS and County_FIPS columns
+        counties = df[['State_FIPS', 'County_FIPS']].drop_duplicates()
         
         counties['State_FIPS'] = counties['State_FIPS'].astype(str).str.zfill(2)
         counties['County_FIPS'] = counties['County_FIPS'].astype(str).str.zfill(3)

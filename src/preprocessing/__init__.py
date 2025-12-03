@@ -2,7 +2,7 @@
 Data preprocessing and integration module.
 
 Handles merging, cleaning, and preparation of datasets for modeling.
-Integrates corn statistics, weather features, and soil properties into
+Integrates crop statistics, weather features, and soil properties into
 a unified modeling dataset.
 """
 

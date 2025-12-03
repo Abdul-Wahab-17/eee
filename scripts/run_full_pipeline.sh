@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Complete pipeline execution script for US Corn Yield Prediction System
+# Complete pipeline execution script for US Crop Yield Prediction System
 # This script runs the entire workflow from data download to model evaluation
 
 set -e
 
 echo "================================================================================"
-echo "US CORN YIELD PREDICTION SYSTEM - FULL PIPELINE"
+echo "US CROP YIELD PREDICTION SYSTEM - FULL PIPELINE"
 echo "================================================================================"
 echo ""
 echo "This script will execute the complete pipeline:"

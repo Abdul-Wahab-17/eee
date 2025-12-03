@@ -32,9 +32,9 @@ print("="*70)
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
-INPUT_FILE = 'county_centroids.csv'
-OUTPUT_FILE = 'weather_data_weekly.csv'
-CHECKPOINT_FILE = 'weekly_weather_checkpoint.csv'
+INPUT_FILE = 'data/raw/county_centroids.csv'
+OUTPUT_FILE = 'data/raw/weather_data_weekly.csv'
+CHECKPOINT_FILE = 'data/raw/weekly_weather_checkpoint.csv'
 
 # NASA POWER API
 API_BASE = "https://power.larc.nasa.gov/api/temporal/daily/point"

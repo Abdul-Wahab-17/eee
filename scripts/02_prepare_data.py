@@ -2,7 +2,7 @@
 Prepare and merge all datasets for modeling.
 
 This script:
-1. Merges corn statistics (yield, area, production)
+1. Merges crop statistics (yield, area, production)
 2. Engineers weather features from raw data
 3. Integrates soil properties
 4. Creates final modeling dataset
@@ -24,17 +24,17 @@ from src.preprocessing import merge_all_data
 def main():
     """Execute data preparation pipeline."""
     print("=" * 80)
-    print("US CORN YIELD PREDICTION - DATA PREPARATION PIPELINE")
+    print("US CROP YIELD PREDICTION - DATA PREPARATION PIPELINE")
     print("=" * 80)
     print()
     
-    print("[1/3] Merging corn statistics datasets...")
+    print("[1/3] Merging crop statistics datasets...")
     print("-" * 80)
     try:
         merge_datasets.main()
-        print("Corn datasets merged successfully.")
+        print("Crop datasets merged successfully.")
     except Exception as e:
-        print(f"Error merging corn datasets: {e}")
+        print(f"Error merging crop datasets: {e}")
         return
     
     print("\n[2/3] Engineering weather features...")

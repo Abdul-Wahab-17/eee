@@ -1,10 +1,10 @@
-# US Corn Yield Prediction System
+# US Crop Yield Prediction System
 
-A machine learning system for predicting county-level corn yields across the United States using multi-source data integration and ensemble modeling techniques.
+A machine learning system for predicting county-level crop yields across the United States using multi-source data integration and ensemble modeling techniques. Supports 12 major crops including corn, soybeans, wheat, cotton, rice, barley, sorghum, peanuts, sugarcane, sugarbeets, oats, and sunflower.
 
 ## Overview
 
-This project implements a comprehensive ML pipeline that integrates heterogeneous datasets from multiple sources to predict corn yields at the county level. The system achieves state-of-the-art performance (R² = 0.863) by combining historical agricultural statistics, weather data, and soil properties.
+This project implements a comprehensive ML pipeline that integrates heterogeneous datasets from multiple sources to predict crop yields at the county level. The system achieves state-of-the-art performance (example: R² = 0.863 for corn) by combining historical agricultural statistics, weather data, and soil properties.
 
 ## Performance Summary
 
@@ -16,17 +16,20 @@ This project implements a comprehensive ML pipeline that integrates heterogeneou
 | Ridge Regression | 0.713 | 16.94 | 22.51 |
 | Baseline (3-year avg) | 0.628 | 19.44 | 25.64 |
 
+*Performance metrics shown for corn. Similar models can be trained for other supported crops.*
+
 The best model (XGBoost) achieves a mean absolute error of 11.22 BU/ACRE, representing approximately 6.4% relative error on average yields.
 
 ## Data Sources
 
 The system integrates data from four primary sources:
 
-1. **USDA NASS QuickStats** - County-level corn statistics (1981-2023)
-   - Corn yield (BU/ACRE)
+1. **USDA NASS QuickStats** - County-level crop statistics (1981-2023)
+   - Crop yield (BU/ACRE)
    - Area planted (ACRES)
    - Area harvested (ACRES)
    - Total production (BU)
+   - Supports 12 major crops: CORN, SOYBEANS, WHEAT, COTTON, RICE, BARLEY, SORGHUM, PEANUTS, SUGARCANE, SUGARBEETS, OATS, SUNFLOWER
 
 2. **NASA POWER Agroclimatology** - Daily weather data aggregated to weekly intervals
    - Temperature (min, max, mean)
@@ -236,7 +239,7 @@ Historical yield patterns account for 53% of total feature importance, emphasizi
 - Implement deep learning architectures (LSTMs, CNNs)
 - Develop sub-county prediction capabilities
 - Add real-time prediction API
-- Extend to other crops (soybeans, wheat)
+- Extend to additional crops beyond the current 12 supported varieties
 
 ## Documentation
 

@@ -34,82 +34,80 @@ def main():
     print()
     
     print("This will download data from multiple sources:")
-    print("  1. USDA NASS QuickStats (yield, area, production)")
+    print("  1. USDA NASS QuickStats (yield, area, production) - 12 crops")
     print("  2. US Census TIGER/Line (county centroids)")
     print("  3. NASA POWER (weather data)")
     print("  4. USDA NRCS (soil properties)")
     print()
-    print("Estimated time: 2-4 hours depending on network speed")
+    print("Estimated time: 6-10 hours depending on network speed")
     print("=" * 80)
     print()
     
-    response = input("Continue? (y/n): ")
-    if response.lower() != 'y':
-        print("Download cancelled.")
-        return
+    # REMOVED THE INPUT PROMPT - auto-continue
+    # This allows batch scripts to run without manual intervention
     
-    print("\n[1/7] Downloading yield data...")
+    print("\n[1/7] Downloading yield data for all crops...")
     print("-" * 80)
     try:
         get_yield_by_county.main()
-        print("Yield data download complete.")
+        print("✓ Yield data download complete.")
     except Exception as e:
-        print(f"Error downloading yield data: {e}")
-        return
+        print(f"✗ Error downloading yield data: {e}")
+        print("Continuing with next step...")
     
     print("\n[2/7] Downloading area planted data...")
     print("-" * 80)
     try:
         get_area_planted_by_county.main()
-        print("Area planted data download complete.")
+        print("✓ Area planted data download complete.")
     except Exception as e:
-        print(f"Error downloading area planted data: {e}")
-        return
+        print(f"✗ Error downloading area planted data: {e}")
+        print("Continuing with next step...")
     
     print("\n[3/7] Downloading area harvested data...")
     print("-" * 80)
     try:
         get_area_harvested_by_county.main()
-        print("Area harvested data download complete.")
+        print("✓ Area harvested data download complete.")
     except Exception as e:
-        print(f"Error downloading area harvested data: {e}")
-        return
+        print(f"✗ Error downloading area harvested data: {e}")
+        print("Continuing with next step...")
     
     print("\n[4/7] Downloading production data...")
     print("-" * 80)
     try:
         get_production_by_county.main()
-        print("Production data download complete.")
+        print("✓ Production data download complete.")
     except Exception as e:
-        print(f"Error downloading production data: {e}")
-        return
+        print(f"✗ Error downloading production data: {e}")
+        print("Continuing with next step...")
     
     print("\n[5/7] Downloading county centroids...")
     print("-" * 80)
     try:
         get_county_centroids.main()
-        print("County centroids download complete.")
+        print("✓ County centroids download complete.")
     except Exception as e:
-        print(f"Error downloading county centroids: {e}")
-        return
+        print(f"✗ Error downloading county centroids: {e}")
+        print("Continuing with next step...")
     
     print("\n[6/7] Downloading weather data (this will take time)...")
     print("-" * 80)
     try:
         get_weather_data.main()
-        print("Weather data download complete.")
+        print("✓ Weather data download complete.")
     except Exception as e:
-        print(f"Error downloading weather data: {e}")
-        return
+        print(f"✗ Error downloading weather data: {e}")
+        print("Continuing with next step...")
     
     print("\n[7/7] Downloading soil data...")
     print("-" * 80)
     try:
         get_soil_data.main()
-        print("Soil data download complete.")
+        print("✓ Soil data download complete.")
     except Exception as e:
-        print(f"Error downloading soil data: {e}")
-        return
+        print(f"✗ Error downloading soil data: {e}")
+        print("Script will continue...")
     
     print("\n" + "=" * 80)
     print("DATA DOWNLOAD COMPLETE")

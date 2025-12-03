@@ -1,14 +1,14 @@
 """
-Merge All Data: Corn + Soil + Weather
+Merge All Data: Crop + Soil + Weather
 ======================================
 Creates the final modeling dataset by merging:
-1. Corn data (modeling_dataset_complete.csv)
+1. Crop data (modeling_dataset_complete.csv)
 2. Soil data (county_soil_aggregates.csv)
 3. Weather features (weather_features_county_year.csv)
 
 Output: modeling_dataset_final.csv
 
-Author: Corn Yield Prediction Project
+Author: Crop Yield Prediction Project
 Date: November 2025
 """
 
@@ -16,7 +16,7 @@ import pandas as pd
 import numpy as np
 
 print("="*70)
-print("MERGING CORN + SOIL + WEATHER DATA")
+print("MERGING CROP + SOIL + WEATHER DATA")
 print("="*70)
 
 # ============================================================================
@@ -24,10 +24,10 @@ print("="*70)
 # ============================================================================
 print("\n[1/5] Loading datasets...")
 
-# Load corn data
-corn_data = pd.read_csv('modeling_dataset_complete.csv')
-print(f"  ✓ Corn data: {len(corn_data):,} records")
-print(f"    Years: {int(corn_data['Year'].min())}-{int(corn_data['Year'].max())}")
+# Load crop data
+crop_data = pd.read_csv('modeling_dataset_complete.csv')
+print(f"  ✓ Crop data: {len(crop_data):,} records")
+print(f"    Years: {int(crop_data['Year'].min())}-{int(crop_data['Year'].max())}")
 
 # Load soil data  
 soil_data = pd.read_csv('county_soil_aggregates.csv')
@@ -77,19 +77,19 @@ soil_data = soil_data.fillna(national_avg)
 print(f"  ✓ Soil data prepared: {len(soil_data):,} counties")
 
 # ============================================================================
-# MERGE CORN + SOIL
+# MERGE CROP + SOIL
 # ============================================================================
-print("\n[3/5] Merging corn data with soil...")
+print("\n[3/5] Merging crop data with soil...")
 
 # Merge on State and County (soil is static - same for all years)
-merged_data = corn_data.merge(
+merged_data = crop_data.merge(
     soil_data,
     on=['State', 'County'],
     how='left'
 )
 
 # Check merge
-before_rows = len(corn_data)
+before_rows = len(crop_data)
 after_rows = len(merged_data)
 print(f"  ✓ Merged successfully")
 print(f"    Before: {before_rows:,} records")
@@ -149,7 +149,7 @@ print(f"  Counties: {final_data[['State', 'County']].drop_duplicates().shape[0]:
 print(f"  Years: {int(final_data['Year'].min())}-{int(final_data['Year'].max())}")
 
 print(f"\nFeature Breakdown:")
-print(f"  Corn variables: ~10 (yield, area, production, etc.)")
+print(f"  Crop variables: ~10 (yield, area, production, etc.)")
 print(f"  Soil variables: 4 (AWC, Clay%, pH, OM%)")
 print(f"  Weather variables: 34 (GDD, precip, temp, stress, anomalies)")
 print(f"  Identifiers: 3 (State, County, Year)")

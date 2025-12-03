@@ -19,7 +19,7 @@ from src.models import train
 def main():
     """Execute model training pipeline."""
     print("=" * 80)
-    print("US CORN YIELD PREDICTION - MODEL TRAINING PIPELINE")
+    print("US CROP YIELD PREDICTION - MODEL TRAINING PIPELINE")
     print("=" * 80)
     print()
     

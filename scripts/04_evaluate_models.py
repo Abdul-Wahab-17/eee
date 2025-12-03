@@ -24,7 +24,7 @@ from src.visualization import plot_results
 def main():
     """Execute model evaluation pipeline."""
     print("=" * 80)
-    print("US CORN YIELD PREDICTION - MODEL EVALUATION PIPELINE")
+    print("US CROP YIELD PREDICTION - MODEL EVALUATION PIPELINE")
     print("=" * 80)
     print()
     
@@ -57,6 +57,5 @@ def main():
     print("\nFinal step: Launch dashboard with 'streamlit run app/streamlit_app.py'")
 
 
-if __name__ == "__main__":
+if __name__ == "____main__":
     main()
-

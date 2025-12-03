@@ -5,7 +5,7 @@ import time
 class USDAQuickStats:
     def __init__(self, api_key=None):
         self.api = "https://quickstats.nass.usda.gov/api/api_GET/"
-        self.key = api_key or "DEMO_KEY"  # Replace if you have your own API key
+        self.key = api_key or "760A18DD-29A5-3562-814A-79B45D1A70EB"
 
     def query(self, params):
         params["key"] = self.key

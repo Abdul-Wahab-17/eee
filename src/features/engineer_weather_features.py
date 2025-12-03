@@ -8,7 +8,7 @@ Output: weather_features_county_year.csv (~87K rows)
 
 Features: ~25-30 weather features per county-year
 
-Author: Corn Yield Prediction Project
+Author: Crop Yield Prediction Project
 Date: November 2025
 """
 
@@ -47,13 +47,13 @@ print(f"  ✓ Years: {int(weather_weekly['Year'].min())}-{int(weather_weekly['Ye
 # ============================================================================
 # DEFINE GROWTH PERIODS
 # ============================================================================
-print("\n[2/5] Defining corn growth periods...")
+print("\n[2/5] Defining crop growth periods...")
 
 def assign_growth_period(week):
     """
     Assign growth period based on week number (Week 1 = early April)
     
-    Approximate corn growth stages:
+    Approximate crop growth stages (example based on corn):
     - Weeks 1-4: Planting/Emergence (April)
     - Weeks 5-8: Vegetative Early (May)
     - Weeks 9-12: Vegetative Late (Early June)
@@ -284,6 +284,6 @@ print(f"\nFile size: {size_mb:.1f} MB")
 print("\n" + "="*70)
 print("✓ WEATHER FEATURE ENGINEERING COMPLETE!")
 print("="*70)
-print(f"\nNext: Merge weather + soil with corn data")
+print(f"\nNext: Merge weather + soil with crop data")
 print("="*70 + "\n")
 

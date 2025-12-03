@@ -8,7 +8,7 @@ class USDAQuickStats:
     def __init__(self, api_key=None):
         self.base = "https://quickstats.nass.usda.gov/api/get_param_values"
         self.api = "https://quickstats.nass.usda.gov/api/api_GET/"
-        self.key = api_key or "DEMO_KEY"   # Replace with your actual API key
+        self.key = api_key or "760A18DD-29A5-3562-814A-79B45D1A70EB"
 
     def query(self, params):
         """Perform a QuickStats API GET request."""

@@ -1,5 +1,5 @@
 """
-COMPREHENSIVE ERROR ANALYSIS FOR CORN YIELD PREDICTION
+COMPREHENSIVE ERROR ANALYSIS FOR CROP YIELD PREDICTION
 ========================================================
 This script performs detailed error analysis on the best model (XGBoost)
 to identify patterns, weaknesses, and areas for improvement.
@@ -29,7 +29,7 @@ plt.style.use('seaborn-v0_8-darkgrid')
 sns.set_palette("husl")
 
 print("="*80)
-print("COMPREHENSIVE ERROR ANALYSIS - CORN YIELD PREDICTION")
+print("COMPREHENSIVE ERROR ANALYSIS - CROP YIELD PREDICTION")
 print("="*80)
 
 # ============================================================================
@@ -415,7 +415,7 @@ print("\n[9/9] Generating comprehensive summary report...")
 
 summary_report = f"""
 {'='*80}
-COMPREHENSIVE ERROR ANALYSIS SUMMARY - XGBOOST CORN YIELD PREDICTION
+COMPREHENSIVE ERROR ANALYSIS SUMMARY - XGBOOST CROP YIELD PREDICTION
 {'='*80}
 
 MODEL PERFORMANCE:
@@ -439,7 +439,7 @@ TEMPORAL PATTERNS (BY YEAR):
 SPATIAL PATTERNS (BY STATE):
   - States with highest errors: {', '.join(state_analysis_filtered['State'].head(3).tolist())}
   - States with lowest errors:  {', '.join(state_analysis_filtered['State'].tail(3).tolist())}
-  - Corn belt states generally have lower errors than fringe production areas
+  - Major production states generally have lower errors than fringe production areas
 
 YIELD LEVEL PATTERNS:
   - Very low yields (<100 BU/ACRE): MAE = {yield_analysis[yield_analysis['Yield_Category']=='Very Low (<100)']['MAE'].values[0] if len(yield_analysis[yield_analysis['Yield_Category']=='Very Low (<100)']) > 0 else 'N/A'} BU/ACRE
@@ -449,7 +449,7 @@ YIELD LEVEL PATTERNS:
 KEY FINDINGS:
   1. Model shows excellent generalization (R² = {r2:.4f}) on unseen data
   2. Errors are slightly higher in extreme weather years (drought, flood)
-  3. Fringe production states have higher prediction errors than corn belt
+  3. Fringe production states have higher prediction errors than major production areas
   4. Relative error (~{mae/test_df['Actual_Yield'].mean()*100:.1f}%) is consistent across yield levels
   5. Model is well-calibrated with minimal systematic bias
 
@@ -457,7 +457,7 @@ RECOMMENDATIONS FOR IMPROVEMENT:
   1. Consider adding satellite imagery data for spatial precision
   2. Include more extreme weather indicators (hail, frost events)
   3. Add county-level management practice data (fertilizer, irrigation)
-  4. Develop separate models for corn belt vs. fringe production areas
+  4. Develop separate models for major vs. fringe production areas
   5. Implement ensemble with separate models for extreme vs. normal years
 
 FILES GENERATED:

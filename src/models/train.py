@@ -1,5 +1,5 @@
 """
-Complete ML Training Pipeline for Corn Yield Prediction
+Complete ML Training Pipeline for Crop Yield Prediction
 ========================================================
 Trains and evaluates 5 different models:
 1. Baseline: Historical Average
@@ -17,7 +17,7 @@ Includes:
 - Model comparison
 - Model persistence
 
-Author: Corn Yield Prediction Project
+Author: Crop Yield Prediction Project
 Date: November 2025
 """
 
@@ -38,7 +38,7 @@ from pathlib import Path
 warnings.filterwarnings('ignore')
 
 print("="*70)
-print("CORN YIELD PREDICTION - ML TRAINING PIPELINE")
+print("CROP YIELD PREDICTION - ML TRAINING PIPELINE")
 print("="*70)
 
 # ============================================================================

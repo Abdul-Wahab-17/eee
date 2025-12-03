@@ -1,8 +1,8 @@
 """
-Data collection module for US corn yield prediction.
+Data collection module for US crop yield prediction.
 
 This module provides utilities for downloading data from multiple sources:
-- USDA NASS QuickStats: Corn yield, area, and production statistics
+- USDA NASS QuickStats: Crop yield, area, and production statistics for major crops
 - NASA POWER: Daily weather data (temperature, precipitation, humidity)
 - USDA NRCS: Soil properties (AWC, pH, clay content, organic matter)
 - US Census: County geographic centroids
